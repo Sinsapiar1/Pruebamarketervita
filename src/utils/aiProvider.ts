@@ -18,7 +18,7 @@ export class AIProviderManager {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            contents: [{ parts: [{ text: 'Test connection' }] }],
+            contents: [{ role: 'user',  parts: [{ text: 'Test connection' }] }],
             generationConfig: { maxOutputTokens: 5 },
           }),
         }
@@ -39,7 +39,7 @@ export class AIProviderManager {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
+          contents: [{ role: 'user',  parts: [{ text: prompt }] }],
           generationConfig: {
             temperature: 0.2,
             maxOutputTokens: 8192,
