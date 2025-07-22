@@ -7,7 +7,7 @@ import {
   TestTube,
   XCircle,
 } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState, type FC } from 'react';
 import { useApiKeys } from '../hooks/useApiKeys';
 
 const providers = [
@@ -53,7 +53,7 @@ interface ApiKeyManagerProps {
   onClose: () => void;
 }
 
-export const ApiKeyManager: React.FC<ApiKeyManagerProps> = ({ onClose }) => {
+export const ApiKeyManager: FC<ApiKeyManagerProps> = ({ onClose }) => {
   const { apiKeys, updateKey, testKey, isLoading } = useApiKeys();
   const [showKeys, setShowKeys] = useState<{ [key: string]: boolean }>({});
 

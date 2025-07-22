@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ApiKeyCollection } from '../types';
+import type { ApiKeyCollection } from '../types';
 import { AIProviderManager } from '../utils/aiProvider';
 
 export const useApiKeys = () => {
@@ -52,7 +52,7 @@ export const useApiKeys = () => {
       }));
 
       if (isValid) {
-        const updatedKeys = {
+        const updatedKeys: ApiKeyCollection = {
           ...apiKeys,
           [provider]: { ...keyData, status: 'valid' },
         };

@@ -1,4 +1,4 @@
-import { ApiKeyCollection } from '../types';
+import type { ApiKeyCollection } from '../types';
 
 export class AIProviderManager {
   private static getStoredKeys(): ApiKeyCollection {

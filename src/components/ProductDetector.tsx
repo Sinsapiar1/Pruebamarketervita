@@ -8,12 +8,12 @@ import {
   TrendingUp,
   Zap,
 } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState, type FC } from 'react';
 import { useApiKeys } from '../hooks/useApiKeys';
-import { Product } from '../types';
+import type { Product } from '../types';
 import { AIProviderManager } from '../utils/aiProvider';
 
-export const ProductDetector: React.FC = () => {
+export const ProductDetector: FC = () => {
   const { validProviders, apiKeys } = useApiKeys();
   const [formData, setFormData] = useState({
     nicho: '',
@@ -134,7 +134,7 @@ export const ProductDetector: React.FC = () => {
     return 'text-red-600 bg-red-100';
   };
 
-  const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
+  const ProductCard: FC<{ product: Product }> = ({ product }) => (
     <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition-all">
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1">

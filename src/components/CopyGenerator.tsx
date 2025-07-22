@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState, type FC } from 'react';
 import { Copy, Facebook, Mail, Zap, Star } from 'lucide-react';
-import { CopyResult } from '../types';
+import type { CopyResult } from '../types';
 import { AIProviderManager } from '../utils/aiProvider';
 import { useApiKeys } from '../hooks/useApiKeys';
 
-export const CopyGenerator: React.FC = () => {
+export const CopyGenerator: FC = () => {
   const { validProviders, apiKeys } = useApiKeys();
   const [formData, setFormData] = useState({
     producto: '',
@@ -48,9 +48,8 @@ export const CopyGenerator: React.FC = () => {
     }
   };
 
-  const parseCopyResponse = (response: string): CopyResult => {
+  const parseCopyResponse = ( _response: string): CopyResult => {
     // Función para parsear la respuesta y extraer el copy
-    const sections = response.split('===');
     
     return {
       facebook: {
